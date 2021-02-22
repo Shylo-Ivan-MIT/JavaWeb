@@ -12,56 +12,66 @@ import java.util.List;
  *
  * @author 38068
  */
-public class User {
+public class User implements Interface {
 
 
     private String name;
     private String email;
     private List<String> language;
-    
+    private boolean checkEmail;
 
     public User() {
     }
 
-    public User(String name, String email, String[] language) {
+    public User(String name, String email, String[] language, boolean checkEmail) {
         this.name = name;
         this.email = email;
         if (language != null) this.language = Arrays.asList(language);
-        //if (language != null) Collections.addAll(this.language, language);                
+        this.checkEmail = checkEmail;              
         
     }
 
 
 
+    @Override
     public String getName() {
         return name;
     }
 
+    @Override
     public void setName(String name) {
         this.name = name;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
 
+    @Override
     public void setEmail(String email) {
         this.email = email;
     }
 
+    @Override
     public List<String> getLanguage() {
         return language;
     }
 
+    @Override
     public void setLanguage(List<String> language) {
         this.language = language;
     }
 
-
-
     @Override
-    public String toString() {
-        return "User{" + "name=" + name + ", email=" + email + ", languages=" + language + '}';
+    public String getCheckEmail(){
+        return checkEmail ? "subscribed for notifications":"not subscribed";
     }
+
+
+    /*@Override
+    public String toString() {
+        return "User{" + "name=" + name + ", email=" + email + ", languages=" + language + "ch=," + checkEmail'}';
+    }*/
 
 }

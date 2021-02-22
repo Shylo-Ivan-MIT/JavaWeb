@@ -223,12 +223,15 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                                             <input type="email" name="email" maxlength="30" size="30" autofocus="autofocus" placeholder="Your e-mail" required></label>
                                     </p>
                                     <p>
-                                        Languages: 
+                                        Languages: </p>
                 <input type="checkbox" name="language" value="English"> English
                 <input type="checkbox" name="language" value="Ukrainian"> Ukrainian
                 <input type="checkbox" name="language" value="Russian"> Russian <br/>
                                     </p>
                                     
+                                    <p>
+                        <input type="checkbox" name="checkEmail" value="on">
+                </p>
                                     <button type="submit " name="submit " value="Submit">Submit</button>
                             </form>
                         </p>
