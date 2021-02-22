@@ -229,7 +229,7 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                 <input type="checkbox" name="language" value="Russian"> Russian <br/>
                                     </p>
                                     
-                                    <p>
+                                    <p>Would you like to receive our weekly reports?
                         <input type="checkbox" name="checkEmail" value="on">
                 </p>
                                     <button type="submit " name="submit " value="Submit">Submit</button>
