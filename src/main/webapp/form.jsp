@@ -8,7 +8,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Wolfpack Kiyv</title>
+    <title>form</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="general\themeNavbar.js"></script>
@@ -146,22 +146,13 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                     </header>
                     
                     <main>
-                        <h2>User's Main Information</h2>
-                        <form action="<%=request.getContextPath()%>/table.jsp" method="post" style="">
-            
-            <input type="hidden" name="id" value="0" /> 
-            <p>Name:
-            <input type="text" name="name"/> </p>
-            <p>Age:
-            <input type="text" name="age"/> </p>
-            <p>Email:
-            <input type="email" name="email" /> </p>
-            
-            
-            <input type="submit" value="Save" />
+                        <h1>User's Main Information</h1>
+                        <form action= "<%=request.getContextPath()%>/Data" method="post">
+            <input type="hidden" name="id" value="0">
+            Name:   <input type="text" placeholder="Your name" name="name" required></br>
+            Age:    <input type="text" placeholder="Your age" name="age" maxlength="9" required></br>
+            <input type="submit" value="Submit">
         </form>
-    </body>
-                </form>
                     </main>
 
                     <footer>

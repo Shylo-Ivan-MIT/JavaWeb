@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package org.obrii.mit.dp2021.shyloivan;
+package org.obrii.mit.dp2021.shyloivan.dbproject;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -12,19 +12,29 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "Form", urlPatterns = {"/form"})
-public class Form extends HttpServlet {
-    UserDataServlet userServlet = new UserDataServlet();
+/**
+ *
+ * @author Користувач
+ */
+@WebServlet(name = "NewFormServlet", urlPatterns = {"/form"})
+public class NewFormServlet extends HttpServlet {
+    
+    DataServlet dataServlet = new DataServlet();
+    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        userServlet.doDelete(request, response);
+      dataServlet.doDelete(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        userServlet.doPut(request, response);
+        dataServlet.doPut(request,response);
     }
 
+    @Override
+    public String getServletInfo() {
+        return "Short description";
+    }
 }

@@ -20,6 +20,14 @@
         <servlet-name>UserDataServlet</servlet-name>
         <servlet-class>org.obrii.mit.dp2021.shyloivan.UserDataServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DataServlet</servlet-name>
+        <servlet-class>org.obrii.mit.dp2021.shyloivan.dbproject.DataServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>NewFormServlet</servlet-name>
+        <servlet-class>org.obrii.mit.dp2021.shyloivan.dbproject.NewFormServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>DataProcessing</servlet-name>
         <url-pattern>/DataProcessing</url-pattern>
@@ -39,6 +47,14 @@
     <servlet-mapping>
         <servlet-name>UserDataServlet</servlet-name>
         <url-pattern>/UserDataServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DataServlet</servlet-name>
+        <url-pattern>/DataServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>NewFormServlet</servlet-name>
+        <url-pattern>/NewFormServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

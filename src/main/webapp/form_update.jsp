@@ -147,21 +147,12 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                     
                     <main>
                         <p>User's Main Information</p>
-                        <form action="<%=request.getContextPath()%>/table.jsp" method="post" style="margin-left: 40%">
-            
-            <input type="hidden" name="id" value="<%=request.getParameter("id")%>" /> 
-            <p>Name:
-            <input type="text" name="name"/> </p>
-            <p>Age:
-            <input type="text" name="age"/> </p>
-            <p>Email:
-            <input type="email" name="email" /> </p>
-            
-            
-            <input type="submit" value="Save" />
+                        <form action= "<%=request.getContextPath()%>/form" method="post"">
+            <input type="hidden" name="id" value="<%=request.getParameter("id")%>">
+            Name:    <input type="text" placeholder="Your name" name="name" required value="<%=request.getParameter("name")%>"></br>
+            Age:    <input type="text" placeholder="Your age" name="age" maxlength="9" required value="<%=request.getParameter("age")%>"></br>
+            <input type="submit" value="Update">
         </form>
-    </body>
-                </form>
                     </main>
 
                     <footer>
