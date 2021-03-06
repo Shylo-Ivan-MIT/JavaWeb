@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Користувач
  */
-@WebServlet(name = "DataServlet", urlPatterns = {"/Data"})
+@WebServlet(name = "DataServlet", urlPatterns = {"/"})
 public class DataServlet extends HttpServlet {
 
     
@@ -38,7 +38,7 @@ public class DataServlet extends HttpServlet {
                 else{
                 request.setAttribute("data", dataCrud.readData());
                 }
-                request.getRequestDispatcher("index.jsp").forward(request, response); 
+                request.getRequestDispatcher("table.jsp").forward(request, response); 
     }
 
     @Override

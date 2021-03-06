@@ -147,7 +147,7 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                     
                     <main>
                         <h1>User's Main Information</h1>
-                        <form action= "<%=request.getContextPath()%>/Data" method="post">
+                        <form action= "<%=request.getContextPath()%>/" method="post">
             <input type="hidden" name="id" value="0">
             Name:   <input type="text" placeholder="Your name" name="name" required></br>
             Age:    <input type="text" placeholder="Your age" name="age" maxlength="9" required></br>

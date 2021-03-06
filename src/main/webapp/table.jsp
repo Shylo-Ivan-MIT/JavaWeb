@@ -4,14 +4,13 @@
     Author     : ??????????
 --%>
 
+<%@page import="org.obrii.mit.dp2021.shyloivan.dbproject.DataClass"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Wolfpack Kiyv</title>
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script defer src="general\themeNavbar.js"></script>
+    <title>Table page</title>
 
     <link rel="stylesheet" href="general\reset.css" />
     <link rel="stylesheet" href="general\style.css" />
@@ -144,19 +143,59 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                         </h1>
                     </a>
                     </header>
-                    
-                    <main>
-                        <p>User's Main Information</p>
-                        <form action= "<%=request.getContextPath()%>/form" method="post">
-            <input type="hidden" name="id" value="<%=request.getParameter("id")%>">
-            Name:    <input type="text" placeholder="Your name" name="name" required value="<%=request.getParameter("name")%>"></br>
-            Age:    <input type="text" placeholder="Your age" name="age" maxlength="9" required value="<%=request.getParameter("age")%>"></br>
-            <input type="submit" value="Update">
-        </form>
-                    </main>
-
-                    <footer>
-                        <p>Made by Shylo Ivan - Icons from fontawesome.com</p>
-                    </footer>
-</body>
+    <main>
+        <h1>Welcome to the Table!</h1>
+        <p>Here you can leave some information, change, delete or add entirely new users.</p>
+        <%List<DataClass> dataList = (List<DataClass>) request.getAttribute("data");%>
+                    <table class="">
+                        <thead>
+                            <tr>
+                                <th>id</th>
+                                <th>name</th>
+                                <th>age</th>
+                                <th>update</th>
+                                <th>delete</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <%for(DataClass data:dataList) { %>
+                        <tr>
+                            <td><%=data.getId()%></td>
+                            <td><%=data.getName()%></td>
+                            <td><%=data.getAge()%></td>
+                            <td>
+                                <form action="form_update.jsp" method="post">
+                                    <input type="hidden" name="id" value="<%=data.getId()%>">
+                                    <input type="hidden" name="name" value="<%=data.getName()%>">
+                                    <input type="hidden" name="age" value="<%=data.getAge()%>">
+                                    <input type="submit" value="Update">
+                                </form>
+                            </td>
+                            <td>
+                                <form action="<%=request.getContextPath()%>/form" method="get">
+                                    <input type="hidden" name="id" value="<%=data.getId()%>">
+                                    <input type="submit" value="Delete">
+                                </form>
+                            </td>
+                        </tr>
+                       <% } %>
+                       <tr>
+                           <td colspan="4">
+                          <form action= "<%=request.getContextPath()%>/Data" method="get">
+                              <input class="table_btn" type="text" name="search">
+                              <input class="table_btn" type="submit" value="Search">
+                          </form>
+                      </td>
+                            <td colspan="3">
+                                <form action="form.jsp" method="get">
+                                    <input type="submit" value="SAVE" >
+                                </form>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+            </main>
+		
+    </body>
 </html>
