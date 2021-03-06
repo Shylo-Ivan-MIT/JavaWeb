@@ -1,5 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>DataProcessing</servlet-name>
+        <servlet-class>org.obrii.mit.dp2021.shyloivan.DataProcessingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DataProccesingServlet</servlet-name>
+        <servlet-class>org.obrii.mit.dp2021.shyloivan.DataProccesingServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>FormServlet</servlet-name>
+        <servlet-class>org.obrii.mit.dp2021.shyloivan.FormServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Form</servlet-name>
+        <servlet-class>org.obrii.mit.dp2021.shyloivan.Form</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UserDataServlet</servlet-name>
+        <servlet-class>org.obrii.mit.dp2021.shyloivan.UserDataServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DataProcessing</servlet-name>
+        <url-pattern>/DataProcessing</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DataProccesingServlet</servlet-name>
+        <url-pattern>/DataProccesingServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FormServlet</servlet-name>
+        <url-pattern>/FormServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Form</servlet-name>
+        <url-pattern>/Form</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UserDataServlet</servlet-name>
+        <url-pattern>/UserDataServlet</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
