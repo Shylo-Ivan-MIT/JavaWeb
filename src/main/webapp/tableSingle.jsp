@@ -4,7 +4,7 @@
     Author     : ??????????
 --%>
 
-<%@page import="org.obrii.mit.dp2021.shyloivan.dbproject.DataClass"%>
+<%@page import="org.obrii.mit.dp2021.shyloivan.dbproject.DataClassForSingle"%>
 <%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -181,15 +181,16 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                         </tr>
                        <% } %>
                        <tr>
-                           <td colspan="4">
-                          <form action= "<%=request.getContextPath()%>/Data" method="get">
+                          <%-- <td colspan="4">
+                                <form action= "<%=request.getContextPath()%>/Data" method="get">
                               <input class="table_btn" type="text" name="search">
                               <input class="table_btn" type="submit" value="Search">
                           </form>
-                      </td>
+                               
+                      </td>--%>
                             <td colspan="3">
                                 <form action="form.jsp" method="get">
-                                    <input type="submit" value="SAVE" >
+                                    <input type="submit" value="New" >
                                 </form>
                             </td>
                         </tr>
