@@ -23,7 +23,7 @@ private Logger logger;
     public PostCon() {
         try {
             Class.forName("org.postgresql.Driver");
-            this.conn = DriverManager.getConnection("jdbc:postgresql://obrii.org:5432/db2021mit21s19", "s19", "0000");
+            this.conn = DriverManager.getConnection("jdbc:postgresql://obrii.org:5432/db2021mit21s19", "s19", "5496");
             this.conn.setAutoCommit(false);
             this.statement = this.conn.createStatement();
         } 
