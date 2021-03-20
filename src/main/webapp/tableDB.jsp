@@ -146,7 +146,7 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
     <main>
         <h1>Welcome to the Table!</h1>
         <p>Here you can leave some information, change, delete or add entirely new users.</p>
-        <%List<DataClass> dataList = (List<DataClass>) request.getAttribute("data");%>
+        <%List<DataClassForDB> dataList = (List<DataClassForDB>) request.getAttribute("data");%>
                     <table class="">
                         <thead>
                             <tr>
@@ -159,7 +159,7 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                             </tr>
                         </thead>
                         <tbody>
-                            <%for(DataClass data:dataList) { %>
+                            <%for(DataClassForDB data:dataList) { %>
                         <tr>
                             <td><%=data.getId()%></td>
                             <td><%=data.getName()%></td>

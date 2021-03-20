@@ -32,7 +32,7 @@ private Logger logger;
             System.err.println(e.getClass().getName()+": "+e.getMessage());
             System.exit(0);
         }
-        sql("CREATE TABLE IF NOT EXISTS ("
+        sql("CREATE TABLE IF NOT EXISTS table ("
                         + "id integer primary key not null, "
                         + "name text not null, "
                         + "age integer not null "
@@ -52,7 +52,7 @@ private Logger logger;
     
     public List<DataClassForDB> readData() {
         try {
-            ResultSet result = this.statement.executeQuery("SELECT * FROM customers");
+            ResultSet result = this.statement.executeQuery("SELECT * FROM table");
             List<DataClassForDB> data = new ArrayList<>();
 
             while (result.next()) {
@@ -79,16 +79,16 @@ private Logger logger;
         }
         data.setId(this.id);
         id=id+1;
-        sql(String.format("INSERT INTO customers (id, name, age) VALUES (%d, '%s', %d);",
+        sql(String.format("INSERT INTO table (id, name, age) VALUES (%d, '%s', %d);",
                 data.getId(), data.getName(), data.getAge()));
     }
 
     public void deleteData(int id) {        
-        sql("DELETE FROM customers WHERE id=" + id);
+        sql("DELETE FROM table WHERE id=" + id);
     }
     
     public void updateData(int id, DataClassForDB data) {  
-        sql(String.format("UPDATE customers "
+        sql(String.format("UPDATE table "
                         + "SET name='" + data.getName() + "' , "
                         + "age=" + data.getAge()
                 + "WHERE id="+id)

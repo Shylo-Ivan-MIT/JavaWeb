@@ -9,6 +9,10 @@
         <servlet-class>org.obrii.mit.dp2021.shyloivan.dbproject.NewFormServlet</servlet-class>
     </servlet>
 
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+    
     <servlet-mapping>
         <servlet-name>DataServlet</servlet-name>
         <url-pattern></url-pattern>
