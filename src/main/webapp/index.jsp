@@ -1,7 +1,7 @@
 <%-- 
     Document   : index
-    Created on : 19 мар. 2021 г., 17:54:05
-    Author     : Користувач
+    Created on : 19 ???. 2021 ?., 17:54:05
+    Author     : ??????????
 --%>
 
 
@@ -146,11 +146,11 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
     <main>
         <h1>Welcome!</h1>
         <p>Choose how you want to save data.</p>
-       <form action="<%=request.getContextPath()%>/tableFile" method="get">
+       <form action="<%=request.getContextPath()%>/table.jsp" method="get">
                     <button class="button" type="submit">File</button>
                 </form>
                     
-                    <form action="<%=request.getContextPath()%>/tableDB" method="get">
+                    <form action="<%=request.getContextPath()%>/tableDB.jsp" method="get">
                     <button class="button" type="submit">DataBase</button>
                 </form>
                     
