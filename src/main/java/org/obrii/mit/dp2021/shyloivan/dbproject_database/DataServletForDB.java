@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Користувач
  */
-@WebServlet(name = "DataServlet", urlPatterns = {"/"})
+@WebServlet(name = "DataServletForDB", urlPatterns = {"/tableDB"})
 public class DataServletForDB extends HttpServlet {
 
     
@@ -33,7 +33,7 @@ PostCon dataCrud = new PostCon();
                 else{
                 request.setAttribute("data", dataCrud.readData());
                 }
-                request.getRequestDispatcher("home.jsp").forward(request, response); 
+                request.getRequestDispatcher("tableDB.jsp").forward(request, response); 
     }
 
     @Override
