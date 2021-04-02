@@ -1,19 +1,20 @@
-<%-- 
-    Document   : form
-    Created on : 10 ????. 2021 ?., 19:53:23
-    Author     : ??????????
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Wolfpack Kiyv</title>
+    <title>form DataBase</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="general\themeNavbar.js"></script>
+
     <link rel="stylesheet" href="general\reset.css" />
     <link rel="stylesheet" href="general\style.css" />
+
+
+
+
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700&display=swap" rel="stylesheet" />
 </head>
 
@@ -204,37 +205,13 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                         </ul>
                     </aside>
                     <main>
-                        <h1>Subscription</h1>
-
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vero esse quidem eius ipsa magni adipisci provident sunt doloremque, labore sapiente earum quae, animi iusto nam eos aliquam, quam dolore.
-                        </p>
-                        <p>
-                            <form class="form" action="<%=request.getContextPath()%>/form" method="post">
-                                
-
-                                    <p><label>
-                                            Your name: 
-                                            <input type="text" name="name" maxlength="10" size="24" placeholder="Your name" required></label>
-                                    </p>
-                                    <p>
-                                        <label>
-                                            Email:     
-                                            <input type="email" name="email" maxlength="30" size="30" autofocus="autofocus" placeholder="Your e-mail" required></label>
-                                    </p>
-                                    <p>
-                                        Languages: </p>
-                <input type="checkbox" name="language" value="English"> English
-                <input type="checkbox" name="language" value="Ukrainian"> Ukrainian
-                <input type="checkbox" name="language" value="Russian"> Russian <br/>
-                                    </p>
-                                    
-                                    <p>Would you like to receive our weekly reports?
-                        <input type="checkbox" name="checkEmail" value="on">
-                </p>
-                                    <button type="submit " name="submit " value="Submit">Submit</button>
-                            </form>
-                        </p>
+                        <h1>User's Main Information</h1>
+                        <form action= "<%=request.getContextPath()%>/Data" method="post">
+            <input type="hidden" name="id" value="0">
+            Name:   <input type="text" placeholder="Your name" name="name" required></br>
+            Age:    <input type="text" placeholder="Your age" name="age" maxlength="9" required></br>
+            <input type="submit" value="Submit">
+        </form>
                     </main>
 
                     <footer>

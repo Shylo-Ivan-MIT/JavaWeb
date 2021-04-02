@@ -1,14 +1,10 @@
-<%-- 
-    Document   : home_page
-    Created on : 10 ????. 2021 ?., 20:13:35
-    Author     : ??????????
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Wolfpack Kiyv</title>
+    <title>form from file</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="general\themeNavbar.js"></script>
@@ -209,26 +205,13 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                         </ul>
                     </aside>
                     <main>
-                        <h1>CLICK ON BUTTON</h1>
-<form action="<%=request.getContextPath()%>/table-file.jsp" method="get">
-                    <button class="button" type="submit">Click here for File</button>
-                </form>
-                    <form action="<%=request.getContextPath()%>/table.jsp" method="get">
-                    <button class="button" type="submit">Click here for DataBase with Spring</button>
-                </form>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vero esse quidem eius ipsa magni adipisci provident sunt doloremque, labore sapiente earum quae, animi iusto nam eos aliquam, quam dolore.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vero esse quidem eius ipsa magni adipisci provident sunt doloremque, labore sapiente earum quae, animi iusto nam eos aliquam, quam dolore.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vero esse quidem eius ipsa magni adipisci provident sunt doloremque, labore sapiente earum quae, animi iusto nam eos aliquam, quam dolore.
-                        </p>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vero esse quidem eius ipsa magni adipisci provident sunt doloremque, labore sapiente earum quae, animi iusto nam eos aliquam, quam dolore.
-                        </p>
-
+                        <h1>User's Main Information</h1>
+                        <form action= "<%=request.getContextPath()%>/" method="post">
+            <input type="hidden" name="id" value="0">
+            Name:   <input type="text" placeholder="Your name" name="name" required></br>
+            Age:    <input type="text" placeholder="Your age" name="age" maxlength="9" required></br>
+            <input type="submit" value="Submit">
+        </form>
                     </main>
 
                     <footer>

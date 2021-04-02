@@ -209,13 +209,56 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                         </ul>
                     </aside>
                     <main>
-                        <h1>CLICK ON BUTTON</h1>
-<form action="<%=request.getContextPath()%>/table-file.jsp" method="get">
-                    <button class="button" type="submit">Click here for File</button>
-                </form>
-                    <form action="<%=request.getContextPath()%>/table.jsp" method="get">
-                    <button class="button" type="submit">Click here for DataBase with Spring</button>
-                </form>
+                        <%
+        List<Data> dataList = (List<Data>) request.getAttribute("data");
+        %>
+        <table class="styled-table">
+              <thead>
+                  <tr>
+                      <th>id</th>
+                      <th>name</th>
+                      <th>age</th>
+                      <th>update</th>
+                      <th>delete</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <%for (Data data : dataList) {%>
+                  <tr>
+                      <td><%=data.getId()%></td>
+                      <td><%=data.getName()%></td>
+                      <td><%=data.getAge()%></td>
+                      <td>
+                          <form action="update.jsp" method="post">
+                              <input type="hidden" name="id" value="<%=data.getId()%>">
+                              <input type="hidden" name="name" value="<%=data.getName()%>">
+                              <input type="hidden" name="age" value="<%=data.getAge()%>">
+                              <input class="table_btn"type="submit" value="Update">
+                          </form>
+                      </td>
+                      <td>
+                          <form action="<%=request.getContextPath()%>/forma" method="get">
+                              <input type="hidden" name="id" value="<%=data.getId()%>">
+                              <input class="table_btn" type="submit" value="Delete">
+                          </form>
+                      </td>
+                  </tr>
+                  <%}%>
+                  <tr>
+                      <td colspan="4">
+                          <form action= "<%=request.getContextPath()%>/Data" method="get">
+                              <input class="table_btn" type="text" name="search">
+                              <input class="table_btn" type="submit" value="Search data">
+                          </form>
+                      </td>
+                      <td colspan="3">
+                          <form action="form.jsp" method="get">
+                              <input class="table_btn" type="submit" value="Add data" >
+                          </form>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
                         <p>
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores vero esse quidem eius ipsa magni adipisci provident sunt doloremque, labore sapiente earum quae, animi iusto nam eos aliquam, quam dolore.
                         </p>
