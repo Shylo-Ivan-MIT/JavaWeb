@@ -39,7 +39,7 @@ public class DataServletSpring extends HttpServlet {
         } else {
             request.setAttribute("data", Spring.readData());
         }
-        request.getRequestDispatcher("home.jsp").forward(request, response);
+        request.getRequestDispatcher("table.jsp").forward(request, response);
     }
 
     @Override
