@@ -3,12 +3,13 @@
     Created on : 10 ????. 2021 ?., 20:13:35
     Author     : ??????????
 --%>
-
+<%@page import="org.obrii.mit.dp2021.shyloivan.shyloivan.spring.Data"%>
+<%@page import="java.util.List"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Wolfpack Kiyv</title>
+    <title>Table</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="general\themeNavbar.js"></script>
@@ -233,11 +234,11 @@ c11.8,0,23.1-2.3,33.4-6.5c30.4-12.3,52.4-40.9,55.3-75c0.2-2.5,0.3-5,0.3-7.6V174.
                               <input type="hidden" name="id" value="<%=data.getId()%>">
                               <input type="hidden" name="name" value="<%=data.getName()%>">
                               <input type="hidden" name="age" value="<%=data.getAge()%>">
-                              <input class="table_btn"type="submit" value="Update">
+                              <input class="table_btn" type="submit" value="Update">
                           </form>
                       </td>
                       <td>
-                          <form action="<%=request.getContextPath()%>/forma" method="get">
+                          <form action="<%=request.getContextPath()%>/form" method="get">
                               <input type="hidden" name="id" value="<%=data.getId()%>">
                               <input class="table_btn" type="submit" value="Delete">
                           </form>

@@ -9,7 +9,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-    <title>Wolfpack Kiyv</title>
+    <title>Table</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script defer src="general\themeNavbar.js"></script>
