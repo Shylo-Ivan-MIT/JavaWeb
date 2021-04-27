@@ -52,7 +52,7 @@ public class MessageController {
     }
     
      @PostMapping("/delete")
-    public String deletteData(@RequestParam(name = "url") String url,
+    public String deleteData(@RequestParam(name = "url") String url,
             Model model) {
 
         restTemplate.delete(url);
