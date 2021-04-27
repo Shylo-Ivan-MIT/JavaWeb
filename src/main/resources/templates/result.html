@@ -24,7 +24,13 @@ and open the template in the editor.
                 <input type="text" name="name" th:value="${student.name}"/>
                 <input type="text" name="age" th:value="${student.age}"/>
                 <input type="submit" value="update"/>
-            </form>           
+            </form>     
+            
+            <form action="/delete" method="post">
+                <input type="hidden" name="url" th:value="${student.getHref()}">
+                
+                <input type="submit" value="delete"/>
+            </form>     
             
             
             

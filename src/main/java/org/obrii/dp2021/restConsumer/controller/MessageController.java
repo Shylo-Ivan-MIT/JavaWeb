@@ -50,5 +50,14 @@ public class MessageController {
 
         return getFormData(model);
     }
+    
+     @PostMapping("/delete")
+    public String deletteData(@RequestParam(name = "url") String url,
+            Model model) {
+
+        restTemplate.delete(url);
+
+        return getFormData(model);
+    }
 
 }
