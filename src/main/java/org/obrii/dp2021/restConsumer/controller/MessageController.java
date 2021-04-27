@@ -39,6 +39,17 @@ public class MessageController {
 
         return "result";
     }
+    
+    
+    @PostMapping("/add")
+    public String createData(@RequestParam(name = "name") String name,
+            @RequestParam(name = "age") String age,
+            Model model) {
+
+        restTemplate.postForObject(URL, new Student(name,Integer.parseInt(age)),Student.class);
+
+        return getFormData(model);
+    }
 
     @PostMapping("/update")
     public String updateData(@RequestParam(name = "name") String name,
