@@ -5,7 +5,6 @@
  */
 package org.obrii.dp2021.restConsumer.controller;
 
-import static java.util.Collections.list;
 import java.util.List;
 import org.obrii.dp2021.restConsumer.entity.Embedded;
 import org.obrii.dp2021.restConsumer.entity.Student;
@@ -22,7 +21,7 @@ import org.springframework.web.client.RestTemplate;
 @Controller
 public class MessageController {
 
-    private String url = "http://localhost:8080/RestJPA-0.0.1-SNAPSHOT/student";
+    private final String URL = "http://localhost:8080/RestJPA-0.0.1-SNAPSHOT/student";
 
     @Autowired
     RestTemplate restTemplate;
@@ -30,7 +29,7 @@ public class MessageController {
     @GetMapping("/getMessage")
     public String getFormData(Model model) {
 
-        Embedded messageEntity = restTemplate.getForObject(url, Embedded.class);
+        Embedded messageEntity = restTemplate.getForObject(URL, Embedded.class);
         
         List<Student> list = messageEntity.getListOfStudents().getStudentList();        
         

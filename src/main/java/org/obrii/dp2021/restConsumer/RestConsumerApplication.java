@@ -12,13 +12,7 @@ public class RestConsumerApplication {
     public static void main(String[] args) {
         SpringApplication.run(RestConsumerApplication.class, args);
     }
-    /*
-    @Bean
-    RestTemplateCustomizer hypermediaRestTemplateCustomizer(HypermediaRestTemplateConfigurer configurer) {
-    return restTemplate -> {
-    configurer.registerHypermediaTypes(restTemplate);
-    };
-    }*/
+  
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder){
