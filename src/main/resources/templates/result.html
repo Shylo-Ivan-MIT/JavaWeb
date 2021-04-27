@@ -18,6 +18,17 @@ and open the template in the editor.
             <p th:text="${student.name}"></p>
             <p th:text="${student.age}"></p>
             
+            
+            <form action="/update" method="post">
+                <input type="hidden" name="url" th:value="${student.getHref()}">
+                <input type="text" name="name" th:value="${student.name}"/>
+                <input type="text" name="age" th:value="${student.age}"/>
+                <input type="submit" value="update"/>
+            </form>           
+            
+            
+            
+            
         </div>
       
     </body>

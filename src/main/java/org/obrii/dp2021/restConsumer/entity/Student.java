@@ -8,13 +8,14 @@ package org.obrii.dp2021.restConsumer.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.springframework.stereotype.Component;
 
 /**
  *
  * @author 38068
  */
 @JsonIgnoreProperties(ignoreUnknown = true)
-
+@Component
 public class Student {
             
     private long id;
@@ -33,6 +34,12 @@ public class Student {
 
     public Student() {
     }
+
+    public Student(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+    
 
     public long getId() {
         return id;
