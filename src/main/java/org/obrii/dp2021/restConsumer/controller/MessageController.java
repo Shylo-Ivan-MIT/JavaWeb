@@ -5,13 +5,14 @@
  */
 package org.obrii.dp2021.restConsumer.controller;
 
-import org.obrii.dp2021.restConsumer.entity.MessageEntity;
+import static java.util.Collections.list;
+import java.util.List;
+import org.obrii.dp2021.restConsumer.entity.Embedded;
 import org.obrii.dp2021.restConsumer.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.client.RestTemplate;
 
 /**
@@ -20,20 +21,24 @@ import org.springframework.web.client.RestTemplate;
  */
 @Controller
 public class MessageController {
-    
-    private String url ="http://localhost:8080/RestJPA-0.0.1-SNAPSHOT/student";
-    
+
+    private String url = "http://localhost:8080/RestJPA-0.0.1-SNAPSHOT/student";
+
     @Autowired
     RestTemplate restTemplate;
-    
-    @PostMapping("/getMessage")
-    public String getFormData(@RequestParam(value="message") 
-            String message, Model model){      
-        url+="?message="+message;
-        Student messageEntity = restTemplate.getForObject(url, Student.class);
-        model.addAttribute("message",messageEntity);
+
+    @GetMapping("/getMessage")
+    public String getFormData(Model model) {
+
+        Embedded messageEntity = restTemplate.getForObject(url, Embedded.class);
         
-    return "result";
+        List<Student> list = messageEntity.getListOfStudents().getStudentList();        
+        
+        model.addAttribute("students", list);
+
+        return "result";
     }
+
     
+
 }

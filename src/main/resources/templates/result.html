@@ -12,9 +12,13 @@ and open the template in the editor.
     </head>
     <body>
         <div>TODO write content</div>
-        
-        <p th:text="'id =' +${message.id}"/>
-        <p th:text="'name =' +${message.name}"/>
-        <p th:text="'age =' +${message.age}"/>
+       
+        <div th:each="student:${students}">
+            <p th:text="${student.href}"></p>
+            <p th:text="${student.name}"></p>
+            <p th:text="${student.age}"></p>
+            
+        </div>
+      
     </body>
 </html>
