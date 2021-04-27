@@ -9,21 +9,14 @@ package org.obrii.dp2021.restConsumer.entity;
  *
  * @author 38068
  */
-public class MessageEntity {
-    
-    private  long id;
-    private  String name;
+
+public class Student {
+            
+    private long id;
+    private String name;
     private int age;
 
-    public MessageEntity() {
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
+    public Student() {
     }
 
     public long getId() {
@@ -42,9 +35,24 @@ public class MessageEntity {
         this.name = name;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Student{id=").append(id);
+        sb.append(", name=").append(name);
+        sb.append(", age=").append(age);
+        sb.append('}');
+        return sb.toString();
+    }
     
-    
-   
     
     
 }

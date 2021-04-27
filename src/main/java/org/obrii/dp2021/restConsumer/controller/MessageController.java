@@ -6,6 +6,7 @@
 package org.obrii.dp2021.restConsumer.controller;
 
 import org.obrii.dp2021.restConsumer.entity.MessageEntity;
+import org.obrii.dp2021.restConsumer.entity.Student;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,10 +27,10 @@ public class MessageController {
     RestTemplate restTemplate;
     
     @PostMapping("/getMessage")
-    public String getFormData(@RequestParam(value="message",defaultValue="Whole World") 
+    public String getFormData(@RequestParam(value="message") 
             String message, Model model){      
         url+="?message="+message;
-        MessageEntity messageEntity = restTemplate.getForObject(url, MessageEntity.class);
+        Student messageEntity = restTemplate.getForObject(url, Student.class);
         model.addAttribute("message",messageEntity);
         
     return "result";
