@@ -13,7 +13,7 @@ and open the template in the editor.
     <body>
         <div>TODO write content</div>
 
-        <form action="/add" method="post">
+        <form action="./add" method="post">
             <input type="text" name="name" placeholder="Enter name"/>
             <input type="text" name="age" placeholder="Enter age"/>
             <input type="submit" value="Add new"/>
@@ -25,14 +25,14 @@ and open the template in the editor.
             <p th:text="${student.age}"></p>
 
 
-            <form action="/update" method="post">
+            <form action="./update" method="post">
                 <input type="hidden" name="url" th:value="${student.getHref()}">
                 <input type="text" name="name" th:value="${student.name}"/>
                 <input type="text" name="age" th:value="${student.age}"/>
                 <input type="submit" value="update"/>
             </form>     
 
-            <form action="/delete" method="post">
+            <form action="./delete" method="post">
                 <input type="hidden" name="url" th:value="${student.getHref()}">                
                 <input type="submit" value="delete"/>
             </form>     
